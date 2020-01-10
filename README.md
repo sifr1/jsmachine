@@ -1,4 +1,4 @@
 # jsmachine
-Javascript n-bitncalculator using logic gates.
+Javascript n-bit calculator using logic gates.
 
 
