@@ -1,0 +1,126 @@
+<script src='lib/BasicLogicGates.js'></script>
+<script src='lib/AdvancedLogicGates.js'></script>
+<script src='lib/HalfAdder.js'></script>
+<script src='lib/FullAdder.js'></script>
+<script src='lib/HalfSubtractor.js'></script>
+<script src='lib/FullSubtractor.js'></script>
+<script src='lib/Operation.js'></script>
+<script src='lib/Utils.js'></script>
+
+<script>
+
+console.log('AND Truth Table');
+console.log('---------------');
+console.log('A | B | C');
+console.log('---------');
+console.log('F | F | ' + AND(false,false));
+console.log('F | T | ' + AND(false,true));
+console.log('F | F | ' + AND(true,false));
+console.log('T | T | ' + AND(true,true));
+console.log();
+
+console.log('OR Truth Table');
+console.log('---------------');
+console.log('A | B | C');
+console.log('---------------');
+console.log('F | F | ' + OR(false,false));
+console.log('F | T | ' + OR(false,true));
+console.log('F | F | ' + OR(true,false));
+console.log('T | T | ' + OR(true,true));
+console.log('---------------');
+
+console.log('NOT Truth Table');
+console.log('---------------');
+console.log('A | C');
+console.log('---------------');
+console.log('F | ' + NOT(false));
+console.log('T | ' + NOT(true));
+console.log('---------------');
+
+console.log('NAND Truth Table');
+console.log('---------------');
+console.log('A | B | C');
+console.log('---------------');
+console.log('F | F | ' + NAND(false,false));
+console.log('F | T | ' + NAND(false,true));
+console.log('F | F | ' + NAND(true,false));
+console.log('T | T | ' + NAND(true,true));
+console.log('---------------');
+
+console.log('NOR Truth Table');
+console.log('---------------');
+console.log('A | B | C');
+console.log('---------------');
+console.log('F | F | ' + NOR(false,false));
+console.log('F | T | ' + NOR(false,true));
+console.log('F | F | ' + NOR(true,false));
+console.log('T | T | ' + NOR(true,true));
+console.log('---------------');
+
+console.log('XOR Truth Table');
+console.log('---------------');
+console.log('A | B | C');
+console.log('---------------');
+console.log('F | F | ' + XOR(false,false));
+console.log('F | T | ' + XOR(false,true));
+console.log('F | F | ' + XOR(true,false));
+console.log('T | T | ' + XOR(true,true));
+console.log('---------------');
+
+console.log('XNOR Truth Table');
+console.log('---------------');
+console.log('A | B | C');
+console.log('---------------');
+console.log('F | F | ' + XNOR(false,false));
+console.log('F | T | ' + XNOR(false,true));
+console.log('F | F | ' + XNOR(true,false));
+console.log('T | T | ' + XNOR(true,true));
+console.log('---------------');
+
+console.log('Half Adder Truth Table');
+console.log('---------------');
+console.log('A | B | SUM | CARRY');
+console.log('---------------');
+console.log('F | F | ' + HalfAdder(false,false)[0] + ' | ' + HalfAdder(false,false)[1]);
+console.log('F | T | ' + HalfAdder(false,true)[0] + ' | ' + HalfAdder(false,true)[1]);
+console.log('F | F | ' + HalfAdder(true,false)[0] + ' | ' + HalfAdder(true,false)[1]);
+console.log('T | T | ' + HalfAdder(true,true)[0] + ' | ' + HalfAdder(true,true)[1]);
+console.log('---------------');
+
+console.log('Full Adder Truth Table');
+console.log('---------------');
+console.log('A | B | Cin | SUM | CARRY');
+console.log('---------------');
+console.log('F | F | F   | ' + FullAdder(false,false,false)[0] + ' | ' + FullAdder(false,false,false)[1]);
+console.log('F | F | T   | ' + FullAdder(false,false,true)[0] + ' | ' + FullAdder(false,false,true)[1]);
+console.log('F | T | F   | ' + FullAdder(false,true,false)[0] + ' | ' + FullAdder(false,true,false)[1]);
+console.log('F | T | T   | ' + FullAdder(false,true,true)[0] + ' | ' + FullAdder(false,true,true)[1]);
+console.log('T | F | F   | ' + FullAdder(true,false,false)[0] + ' | ' + FullAdder(true,false,false)[1]);
+console.log('T | F | T   | ' + FullAdder(true,false,true)[0] + ' | ' + FullAdder(true,false,true)[1]);
+console.log('T | T | F   | ' + FullAdder(true,true,false)[0] + ' | ' + FullAdder(true,true,false)[1]);
+console.log('T | T | T   | ' + FullAdder(true,true,true)[0] + ' | ' + FullAdder(true,true,true)[1]);
+console.log('---------------');
+
+console.log('Half Subtractor Truth Table');
+console.log('---------------');
+console.log('A | B | D | Bo');
+console.log('---------------');
+console.log('F | F | ' + HalfSubtractor(false,false)[0] + ' | ' + HalfSubtractor(false,false)[1]);
+console.log('F | T | ' + HalfSubtractor(false,true)[0] + ' | ' + HalfSubtractor(false,true)[1]);
+console.log('F | F | ' + HalfSubtractor(true,false)[0] + ' | ' + HalfSubtractor(true,false)[1]);
+console.log('T | T | ' + HalfSubtractor(true,true)[0] + ' | ' + HalfSubtractor(true,true)[1]);
+console.log('---------------');
+
+console.log('Full Subtractor Truth Table');
+console.log('---------------');
+console.log('A | B | Bin | Diff | Bo');
+console.log('---------------');
+console.log('F | F | F   | ' + FullSubtractor(false,false,false)[0] + ' | ' + FullSubtractor(false,false,false)[1]);
+console.log('F | F | T   | ' + FullSubtractor(false,false,true)[0] + ' | ' + FullSubtractor(false,false,true)[1]);
+console.log('F | T | F   | ' + FullSubtractor(false,true,false)[0] + ' | ' + FullSubtractor(false,true,false)[1]);
+console.log('F | T | T   | ' + FullSubtractor(false,true,true)[0] + ' | ' + FullSubtractor(false,true,true)[1]);
+console.log('T | F | F   | ' + FullSubtractor(true,false,false)[0] + ' | ' + FullSubtractor(true,false,false)[1]);
+console.log('T | F | T   | ' + FullSubtractor(true,false,true)[0] + ' | ' + FullSubtractor(true,false,true)[1]);
+console.log('T | T | F   | ' + FullSubtractor(true,true,false)[0] + ' | ' + FullSubtractor(true,true,false)[1]);
+console.log('T | T | T   | ' + FullSubtractor(true,true,true)[0] + ' | ' + FullSubtractor(true,true,true)[1]);
+console.log('---------------');

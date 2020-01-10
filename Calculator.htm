@@ -1,0 +1,113 @@
+<html>
+    <head>
+    <title>Boolean Calculator</title>
+    <script src='lib/BasicLogicGates.js'></script>
+    <script src='lib/AdvancedLogicGates.js'></script>
+    <script src='lib/HalfAdder.js'></script>
+    <script src='lib/FullAdder.js'></script>
+    <script src='lib/HalfSubtractor.js'></script>
+    <script src='lib/FullSubtractor.js'></script>
+    <script src='lib/Operation.js'></script>
+    <script src='lib/Utils.js'></script>
+
+    <script>
+        
+
+        function add() {
+
+            var firstno = document.getElementById('firstNo').value;
+            var secondno = document.getElementById('SecondNo').value;
+
+            binaryResult = Add(firstno,secondno);
+            decimalResult = BinaryToDecimal(binaryResult);
+
+            document.getElementById("binary").innerHTML = binaryResult;
+            document.getElementById("decimal").innerHTML = decimalResult;
+        }
+
+        function sub()
+        {
+            var firstno = document.getElementById('firstNo').value;
+            var secondno = document.getElementById('SecondNo').value;
+
+            binaryResult = Sub(firstno,secondno);
+            decimalResult = BinaryToDecimal(binaryResult);
+
+            document.getElementById("binary").innerHTML = binaryResult;
+            document.getElementById("decimal").innerHTML = decimalResult;
+
+        }
+    
+    
+    
+    </script>
+
+    <style>
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    div {
+        padding:10px;
+    }
+    input {
+        width: 200px;height: 40;font-size: 18px;
+        padding:10px;
+    }
+
+    button {
+        width: 120px; height:60;font-size: 18px;
+        padding:10px;
+    }
+
+
+    
+    </style>
+
+</head>
+<body>
+
+<div>
+    <label>First No</label>
+    <input id="firstNo" type="text">
+    <br><br>
+    <label>Second No</label>
+    <input id="SecondNo" type="text">
+    
+</div>
+<div>
+
+</div>
+<div>
+        <button type="button" onclick="add()" >ADD</button>
+        <button type="button" onclick="sub()" >SUBTRACT</button>
+</div>
+Result in Binary
+<div id="binary">
+
+</div>
+Result in Decimal
+<div id="decimal">
+
+</div>
+
+
+</body>
+
+<script>
+// testing
+
+console.log('Binary 110110110 in Decimal is :' + BinaryToDecimal(110110110));
+console.log('Binary 111 in Decimal is :' + BinaryToDecimal(111));
+
+Add("110110110","111");
+Subtract("110110110","111")
+
+a = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+b = 10;
+console.log(DecimalToBinary(a));
+console.log(a+a);
+//console.log(DecimalToBinary(b))
+
+</script>
+</html>
